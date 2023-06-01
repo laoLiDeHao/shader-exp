@@ -82,6 +82,8 @@ export const GridChange1 = shaderMaterial(
 
 
       vec3 col=vec3(.1,1.,.1)*vPattern*vec3(vUv,.6);
+
+      col = mix(vec3(.1,.3,.1),vec3(.1,.9,.1),col);
       
       gl_FragColor = vec4(col,1.);
     }
