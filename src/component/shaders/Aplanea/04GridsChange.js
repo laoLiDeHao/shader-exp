@@ -39,7 +39,8 @@ export const GridChange1 = shaderMaterial(
       vec3 newPosition = normal*vec3(sample1)+position;//
    
        newPosition.z *= random(uv);
-      //  newPosition.x *= abs(cos(uTime*position.z));
+
+      newPosition.x +=pow(newPosition.z,5.)*abs(sin(uTime)*.5)*.5;
 
        gl_Position = projectionMatrix*modelViewMatrix * vec4(newPosition, 1.0);
 
@@ -80,7 +81,8 @@ export const GridChange1 = shaderMaterial(
       
 
 
-      vec3 col=vec3(1.)*vPattern*vec3(vUv,.6);
+      vec3 col=vec3(.1,1.,.1)*vPattern*vec3(vUv,.6);
+      
       gl_FragColor = vec4(col,1.);
     }
 `,
