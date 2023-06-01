@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from '../pages/home/home';
 import About from '../pages/about/about';
 import APlane from '../pages/shader/Aplane';
+import SmileAnimation from '../pages/shader/shaders/SmileAnimation';
 function AppRoute() {
   return (
     <BrowserRouter>
@@ -11,6 +12,8 @@ function AppRoute() {
         <Route path='/home' element={<Home/>}></Route>
         <Route path='/about' element={<About/>}></Route>
         <Route path='/APlane' element={<APlane/>}></Route>
+
+        <Route path='/SmileAnimation' element={<SmileAnimation/>}></Route>
       </Routes>
     </BrowserRouter>
   );

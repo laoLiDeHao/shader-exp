@@ -1,20 +1,15 @@
 import { CameraControls, Environment, Grid } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
-import {  PlaneGeometry, SphereGeometry } from "three";
-import { ShaderHappy } from "./01shaderHappy";
-import { RactChange } from "./02RactChange";
-import { ShaderHappy2 } from "./03shaderHappy2";
-import { ShaderHappy3 } from "./03shaderHappy3";
-import { GridChange1 } from "./04GridsChange";
+import {  PlaneGeometry } from "three";
+import { ShaderHappy3 } from "../../../component/shaders/Aplanea/03shaderHappy3";
 
-const shaderList  = {
-  ShaderHappy,RactChange
-}
 
-export default function Aplanea() {
+
+
+export default function SmileAnimation() {
   useEffect(()=>{
-    console.log(shaderList);
+
   },[])
   return (
     <>
@@ -61,8 +56,8 @@ export default function Aplanea() {
 function Scene() {
   const refs = useRef([]);
   const geo = new PlaneGeometry(4, 4, 400, 400);
-  // const geo = new SphereGeometry(1, 400, 400);
-  const mat = useMemo(() => new GridChange1(), []);
+  // const geo = new SphereGeometry(10, 400, 400);
+  const mat = useMemo(() => new ShaderHappy3(), []);
   
   useFrame(({ clock }) => {
     refs.current.forEach((item) => {
