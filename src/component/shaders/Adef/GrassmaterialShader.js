@@ -1,6 +1,6 @@
 import { shaderMaterial } from "@react-three/drei";
 import glsl from "babel-plugin-glsl/macro";
-export const GridChange1 = shaderMaterial(
+export const GrassmaterialShader = shaderMaterial(
   {
     uTime: 0,
 
@@ -29,9 +29,9 @@ export const GridChange1 = shaderMaterial(
 
       float rnd = random( st );
 
-      st *= 10.0; // Scale the coordinate system by 10
-      vec2 ipos = floor(st);  // get the integer coords
-      vec2 fpos = fract(st);  // get the fractional coords
+      // st *= 10.0; // Scale the coordinate system by 10
+      // vec2 ipos = floor(st);  // get the integer coords
+      // vec2 fpos = fract(st);  // get the fractional coords
   
 
       float sample1 = random(st);

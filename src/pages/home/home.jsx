@@ -1,9 +1,9 @@
-import DefScene from "../../component/defScene";
+// import DefScene from "../../component/defScene";
 import "./home.scss";
 export default function Home() {
   return (
     <>
-      <DefScene />
+      <h1>Shader exp</h1>
     </>
   );
 }

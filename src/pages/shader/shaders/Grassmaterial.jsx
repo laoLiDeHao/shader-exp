@@ -2,18 +2,16 @@ import { CameraControls, Environment, Grid } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
 import {  PlaneGeometry } from "three";
-import { ShaderHappy } from "./01shaderHappy";
-import { RactChange } from "./02RactChange";
+import { GrassmaterialShader } from "../../../component/shaders/Adef/GrassmaterialShader";
 
-import { ClassNoise1 } from "../noise/classNoise.js";
 
-const shaderList  = {
-  ShaderHappy,RactChange
-}
+// import { GridChange1 } from "./04GridsChange";
 
-export default function Aplanea() {
+
+
+export default function Grassmaterial() {
   useEffect(()=>{
-    console.log(shaderList);
+
   },[])
   return (
     <>
@@ -59,9 +57,8 @@ export default function Aplanea() {
 
 function Scene() {
   const refs = useRef([]);
-  const geo = new PlaneGeometry(4, 4, 100, 100);
-  // const geo = new SphereGeometry(1, 400, 400);
-  const mat = useMemo(() => new ClassNoise1(), []);
+  const geo = new PlaneGeometry(4, 4, 400, 400);
+  const mat = useMemo(() => new GrassmaterialShader(), []);
   
   useFrame(({ clock }) => {
     refs.current.forEach((item) => {
@@ -77,7 +74,8 @@ function Scene() {
         geometry={geo}
         ref={(ref) => (refs.current[0] = ref)}
         material={mat}
-        position={[0, 0, 0]}
+        position={[0, -2, 0]}
+        rotation={[-Math.PI/2,0,0]}
       ></mesh>
     </group>
   );
