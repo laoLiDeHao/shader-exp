@@ -1,8 +1,9 @@
-import { CameraControls, Environment, Grid } from "@react-three/drei";
+import { CameraControls, Grid } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
 import {  PlaneGeometry } from "three";
 import { ShaderHappy3 } from "../../../component/shaders/Aplanea/03shaderHappy3";
+import { SunsetEnv } from "../../../component/Environment";
 
 
 
@@ -26,7 +27,8 @@ export default function SmileAnimation() {
           fadeDistance={30}
         />
         <Scene/>
-        <Environment background preset="sunset" blur={0.8} />
+        {/* <Environment background files='/texture/venice_sunset_1k.hdr' blur={0.8} /> */}
+        <SunsetEnv/>
         <CameraControls />
       </Canvas>
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none',color:'#fff' }}>

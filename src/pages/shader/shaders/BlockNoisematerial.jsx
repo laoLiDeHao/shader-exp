@@ -2,10 +2,10 @@ import { CameraControls, Grid } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PlaneGeometry } from "three";
-import { ClassNoise1 } from "../../../component/shaders/noise/classNoise";
 import { useControls } from "leva";
 import { SunsetEnv } from "../../../component/Environment";
-export default function ClassNoisematerial() {
+import { BlockNoise } from "../../../component/shaders/noise/blockNiose";
+export default function BlockNoisematerial() {
   useEffect(() => {}, []);
   return (
     <>
@@ -99,22 +99,22 @@ export default function ClassNoisematerial() {
 function Scene() {
   const refs = useRef([]);
   const geo = new PlaneGeometry(2, 2, 400, 400);
-  const mat = useMemo(() => new ClassNoise1(), []);
+  const mat = useMemo(() => new BlockNoise(), []);
   const [uSample, setUSample] = useState(0);
   const contral = useControls({
     sample: {
-      value: "class",
-      options: ["class", "block", "GOTO10"],
+      value: "block",
+      options: ["block", "point", "smooth"],
       onChange: (value) => {
         console.log(value);
         switch (value) {
-          case "class":
+          case "block":
             setUSample(0);
             break;
-          case "block":
+          case "point":
             setUSample(1);
             break;
-          case "GOTO10":
+          case "smooth":
             setUSample(2);
             break;
           default:

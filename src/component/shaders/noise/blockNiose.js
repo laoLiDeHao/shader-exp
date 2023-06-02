@@ -3,6 +3,7 @@ import glsl from "babel-plugin-glsl/macro";
 export const BlockNoise = shaderMaterial(
   {
     uTime: 0,
+    uSample:0
   },
   glsl`
     uniform float uTime;
@@ -11,10 +12,6 @@ export const BlockNoise = shaderMaterial(
     varying vec3 vPosition;
     varying vec3 vPattern;
     varying vec2 vUv; //   不加flat将以整个材质为整体渲染，加上flat将以 1 网格结构为整体渲染
-
-
-
-
 
     void main() {
       vNormal = normal;
@@ -27,7 +24,9 @@ export const BlockNoise = shaderMaterial(
     }
 `,
   glsl`
+
     uniform float uTime;
+    uniform float uSample;
 
     varying vec3 vNormal;
     varying vec3 vPosition;
@@ -118,11 +117,22 @@ export const BlockNoise = shaderMaterial(
   float valNoise = valueNoise(vec2(st*10.0))*.5+.5;
   float gradNoise =  gradeNoise(vec2(st*10.0))*.5+.5;
 
-  col = vec3(smoothstep(.4,.5,gradNoise));
+
+  if(uSample ==  0. ){
+    col = vec3(randNoise);
+  }else if(uSample == 1.){
+    col = vec3(valNoise);
+  }else if(uSample == 2.){
+    col = vec3(gradNoise);
+  }
+  
+
+  // col = vec3(smoothstep(.4,.5,gradNoise));
 
    
 
   gl_FragColor = vec4(col,1.);
   }
+
 `,
 );

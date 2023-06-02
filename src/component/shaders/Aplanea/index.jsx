@@ -1,4 +1,4 @@
-import { CameraControls, Environment, Grid } from "@react-three/drei";
+import { CameraControls, Grid } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
 import {  PlaneGeometry } from "three";
@@ -6,6 +6,7 @@ import { ShaderHappy } from "./01shaderHappy";
 import { RactChange } from "./02RactChange";
 
 import { BlockNoise } from "../noise/blockNiose";
+import { SunsetEnv } from "../../Environment";
 
 const shaderList  = {
   ShaderHappy,RactChange
@@ -30,7 +31,7 @@ export default function Aplanea() {
           fadeDistance={30}
         />
         <Scene/>
-        <Environment background preset="sunset" blur={0.8} />
+       <SunsetEnv/>
         <CameraControls />
       </Canvas>
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none',color:'#fff' }}>

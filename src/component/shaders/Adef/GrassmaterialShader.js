@@ -7,7 +7,6 @@ export const GrassmaterialShader = shaderMaterial(
   },
   glsl`
     uniform float uTime;
-
     varying vec3 vNormal;
     varying vec3 vPosition;
     varying vec2 vUv; //   不加flat将以整个材质为整体渲染，加上flat将以 1 网格结构为整体渲染
