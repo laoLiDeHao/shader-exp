@@ -57,7 +57,7 @@ export default function Grassmaterial() {
 
 function Scene() {
   const refs = useRef([]);
-  const geo = new PlaneGeometry(4, 4, 400, 400);
+  const geo = new PlaneGeometry(40, 40, 400, 400);
   const mat = useMemo(() => new GrassmaterialShader(), []);
   
   useFrame(({ clock }) => {

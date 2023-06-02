@@ -5,7 +5,7 @@ import {  PlaneGeometry } from "three";
 import { ShaderHappy } from "./01shaderHappy";
 import { RactChange } from "./02RactChange";
 
-import { ClassNoise1 } from "../noise/classNoise.js";
+import { BlockNoise } from "../noise/blockNiose";
 
 const shaderList  = {
   ShaderHappy,RactChange
@@ -61,7 +61,7 @@ function Scene() {
   const refs = useRef([]);
   const geo = new PlaneGeometry(4, 4, 100, 100);
   // const geo = new SphereGeometry(1, 400, 400);
-  const mat = useMemo(() => new ClassNoise1(), []);
+  const mat = useMemo(() => new BlockNoise(), []);
   
   useFrame(({ clock }) => {
     refs.current.forEach((item) => {
