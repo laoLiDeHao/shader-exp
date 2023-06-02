@@ -1,11 +1,10 @@
 import { CameraControls, Environment, Grid } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
-import {  PlaneGeometry, SphereGeometry } from "three";
+import {  PlaneGeometry } from "three";
 import { ShaderHappy } from "./01shaderHappy";
 import { RactChange } from "./02RactChange";
-import { ShaderHappy2 } from "./03shaderHappy2";
-import { ShaderHappy3 } from "./03shaderHappy3";
+
 import { GridChange1 } from "./04GridsChange";
 
 const shaderList  = {
