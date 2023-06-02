@@ -100,7 +100,7 @@ function Scene() {
   const geo = new PlaneGeometry(2, 2, 400, 400);
   const mat = useMemo(() => new ClassNoise1(), []);
   const [uSample, setUSample] = useState(0);
-  const { sample } = useControls({
+  const contral = useControls({
     sample: {
       value: "class",
       options: ["class", "block", "GOTO10"],
@@ -123,6 +123,7 @@ function Scene() {
       },
     },
   });
+  console.log(contral);
 
   useFrame(({ clock }) => {
     console.log(uSample);
