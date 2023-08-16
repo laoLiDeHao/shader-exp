@@ -10,6 +10,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "babel-plugin-glsl": "^1.0.0",
+    "gsap": "^3.12.2",
     "lamina": "^1.0.1",
     "leva": "^0.9.34",
     "node-sass": "^7.0.3",

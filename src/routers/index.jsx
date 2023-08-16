@@ -6,6 +6,7 @@ import SmileAnimation from '../pages/shader/shaders/SmileAnimation';
 import Grassmaterial from "../pages/shader/shaders/Grassmaterial";
 import ClassNoisematerial from "../pages/shader/shaders/ClassNoisematerial";
 import BlockNoisematerial from "../pages/shader/shaders/BlockNoisematerial";
+import MusicViewShader from "../pages/shader/shaders/MusicWavematerial";
 function AppRoute() {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ function AppRoute() {
         <Route path='/Grassmaterial' element={<Grassmaterial />}></Route>
         <Route path='/ClassNoisematerial' element={<ClassNoisematerial />}></Route>
         <Route path='/BlockNoisematerial' element={<BlockNoisematerial />}></Route>
+        <Route path='/MusicViewShader' element={<MusicViewShader />}></Route>
       </Routes>
     </BrowserRouter>
   );
