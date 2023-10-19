@@ -50,6 +50,7 @@ function Inits() {
       <p>
         👉：<a href="/ClassNoisematerial">ClassNoise material</a><br />
         👉：<a href="/BlockNoisematerial">BlockNoise material</a><br />
+        👉：<a href="/MusicViewShader">BlockNoise material</a><br />
       </p>
     </header>
   </div>)
